@@ -1,0 +1,88 @@
+MongoDB Assignment-
+Exercise 1-
+1. Online Banking System → SQL
+
+Justification:
+Requires ACID properties for secure and accurate transactions (e.g., money transfers). Data is highly structured and needs strong consistency.
+
+2. Social Media Platform → NoSQL
+
+Justification:
+Handles large volumes of unstructured data (posts, comments, likes). Needs high scalability and flexible schema.
+
+3. Real-Time Chat Application → NoSQL
+
+Justification:
+Requires low latency and high throughput. Data is fast-growing and semi-structured, making NoSQL suitable.
+
+4. Hospital Patient Records → SQL
+
+Justification:
+Needs high accuracy, consistency, and integrity. Data is structured and must comply with strict regulations.
+
+5. IoT Sensor Data Collection → NoSQL
+
+Justification:
+Deals with high-volume, time-series data from sensors. Requires scalability and flexible schema.
+
+Excercise 2-
+1. Stock Trading Platform
+
+Prioritizes: Consistency (C) + Partition Tolerance (P)
+
+2. Content Delivery Network (CDN)
+
+Prioritizes: Availability (A) + Partition Tolerance (P)
+
+3. Airline Booking System
+
+Prioritizes: Consistency (C) + Partition Tolerance (P)
+
+4. Video Streaming Service
+
+Prioritizes: Availability (A) + Partition Tolerance (P)
+
+Excercise 3-
+
+db.books.insertMany([
+  {
+    title: "The Alchemist",
+    author: "Paulo Coelho",
+    available: true
+  },
+  {
+    title: "1984",
+    author: "George Orwell",
+    available: true
+  }
+])
+
+db.users.insertOne({
+  name: "Alice",
+  borrowedBooks: []
+})
+
+ 1. Adding New Books
+db.books.insertOne({
+  title: "To Kill a Mockingbird",
+  author: "Harper Lee",
+  available: true
+})
+
+2. Finding Books by Author
+db.books.find({ author: "George Orwell" })
+
+3. Updating Book Availability
+
+(When a book is borrowed or returned)
+
+db.books.updateOne({ title: "1984" },{ available: false })
+
+Excercise 4-
+
+{
+  orderId: 12345,                     // Integer instead of string
+  orderDate: new Date("2024-01-15T00:00:00Z"),  // Date object
+  totalAmount: 99.99, // Precise decimal
+  items: ["item1", "item2"]           // Array remains the same
+}
